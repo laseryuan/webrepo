@@ -41,3 +41,8 @@ Comiple and Build
 make -j4
 make -j4 test
 ```
+
+# Work in process
+    ```
+    ./node inspect --expose-internals --experimental-repl-await test/parallel/test-async-hooks-promise.js
+    ```
