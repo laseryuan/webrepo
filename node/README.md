@@ -36,13 +36,14 @@ tools/test.py -v -J test/parallel/test-repl-top-level-await.js
 
 Comiple and Build
 ```
-./configure && make -j4
+./configure && make -J
 
-make -j4
-make -j4 test
+make -J
+make -J test
 ```
 
 # Work in process
     ```
+    ./node inspect test/parallel/test-repl.js
     ./node inspect --expose-internals --experimental-repl-await test/parallel/test-async-hooks-promise.js
     ```
