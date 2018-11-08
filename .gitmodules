@@ -1,7 +1,3 @@
 [submodule "node/node"]
 	path = node/node
 	url = git@github.com:laseryuan/node.git
-[submodule "myetherwallet/app"]
-	path = myetherwallet/app
-	url = git@github.com:laseryuan/MyEtherWallet.git
-	branch = master
