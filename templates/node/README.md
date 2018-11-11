@@ -1,10 +1,13 @@
-Run in docker
 ```
 export APP_NAME=\
 {app_name}
 
 cd ~/projects/webrepo/archive/$APP_NAME
+ln -s ../node_modules ./
+```
 
+Run in docker
+```
 docker build -t lasery/webrepo-$APP_NAME .
 
 docker run --rm -it --name=webrepo-$APP_NAME \
@@ -12,6 +15,8 @@ docker run --rm -it --name=webrepo-$APP_NAME \
   --net=host --pid=host \
   lasery/webrepo-node-request-context \
   bash
+
+  --env-file ../../admin/env.list \
 ```
 
 Copy node_modules source code to local directory
