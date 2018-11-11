@@ -1,4 +1,8 @@
-FROM node:10
+FROM resin/raspberry-pi-node:9.11-stretch-20181021
+
+# Create node user
+RUN groupadd -g 1000 node \
+  && useradd -u 1000 -g node -ms /bin/bash node
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -6,7 +10,7 @@ RUN chown node:node /usr/src/app
 
 # Create node_modules symlink target directory
 RUN mkdir /usr/src/node_modules
-RUN chown node:node /usr/src/node_modules
+RUN chown -R node:node /usr/src/node_modules
 
 # RUN npm install -g {global_packages}
 
@@ -18,3 +22,4 @@ COPY --chown=node app/package*.json ./
 RUN npm install
 
 COPY --chown=node app .
+

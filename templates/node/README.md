@@ -14,6 +14,15 @@ docker run --rm -it --name=webrepo-$APP_NAME \
   bash
 ```
 
+Copy node_modules source code to local directory
+```
+  mkdir node_modules
+  docker run --rm \
+    -v $PWD/node_modules/:/tmp/node_modules/ \
+    lasery/webrepo-$APP_NAME \
+    cp -rf ../node_modules/. /tmp/node_modules/
+```
+
 Usefull commands
 ```
 npm install
